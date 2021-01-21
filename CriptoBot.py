@@ -5,12 +5,7 @@ import requests
 from selenium import webdriver
 import os
 bot = telebot.TeleBot('1568111312:AAFDLr5-uhe-xdNJDKCk0CM64FOY55bROFA')
-intern.capabilities = {
-  'selenium-version': '2.44.0'
-, 'chromeOptions': {
-    debuggerAddress: '127.0.0.1:9222'
-  }
-}
+
 @bot.message_handler(commands=['start'])
 def start(message):
     #Кнопки для бота
@@ -38,8 +33,8 @@ def mess(message):
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
         DRIVER = 'chromeDriver\chromedriver.exe'
-        driver = webdriver.Chrome(DRIVER, chrome_options=options)
-        driver.get('https://ru.tradingview.com/chart/?symbol=BITSTAMP%3ABTCUSD')
+        driver = webdriver("http://172.16.205.129:4444/wd/hub", "firefox", "ANY", chrome_options=options)
+        driver.get('https://ru.tradingview.com/chart/?symbol=BITSTAMP%3ABTCUSD/wd/hub')
         driver.save_screenshot("bitcoin.png")
         driver.quit()
         bot.send_photo(message.chat.id,open('bitcoin.png','rb'))
