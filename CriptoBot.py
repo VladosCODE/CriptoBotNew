@@ -32,7 +32,7 @@ def mess(message):
         options.add_argument('headless')
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
-        DRIVER = 'D:\chromeDriver\chromedriver.exe'
+        DRIVER = 'PATH\TO\CHROME'
         driver = webdriver.Chrome(DRIVER, chrome_options=options)
         driver.get('https://ru.tradingview.com/chart/?symbol=BITSTAMP%3ABTCUSD/wd/hub')
         driver.save_screenshot("bitcoin.png")
@@ -51,7 +51,7 @@ def mess(message):
         options.add_argument('headless')
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
-        DRIVER = 'D:\chromeDriver\chromedriver.exe'
+        DRIVER = 'PATH\TO\CHROME'
         driver = webdriver.Chrome(DRIVER, chrome_options=options)
         driver.get('https://ru.tradingview.com/chart/?symbol=BITSTAMP%3AETHUSD')
         driver.save_screenshot("ethreum.png")
@@ -67,7 +67,7 @@ def mess(message):
         options.add_argument('headless')
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
-        DRIVER = 'D:\chromeDriver\chromedriver.exe'
+        DRIVER = 'PATH\TO\CHROME'
         driver = webdriver.Chrome(DRIVER, chrome_options=options)
         driver.get('https://ru.tradingview.com/chart/?symbol=BITSTAMP%3AXRPUSD')
         driver.save_screenshot("xrp.png")
@@ -83,7 +83,7 @@ def mess(message):
         options.add_argument('headless')
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
-        DRIVER = 'D:\chromeDriver\chromedriver.exe'
+        DRIVER = 'PATH\TO\CHROME'
         driver = webdriver.Chrome(DRIVER, chrome_options=options)
         driver.get('https://ru.tradingview.com/chart/?symbol=BITFINEX%3AADAUSD')
         element = driver.save_screenshot("cardano.png")
@@ -91,4 +91,4 @@ def mess(message):
     else:
         final_message = f"<u>Курс данной криптовалюты отсутствует в боте</u>"
     bot.send_message(message.chat.id,final_message,parse_mode="html")
-bot.polling()
+bot.polling(none_stop=True)
