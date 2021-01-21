@@ -28,7 +28,7 @@ def mess(message):
     get_message_bot = message.text.strip().lower()
     if get_message_bot == "bitcoin":
         Bitcoin = 'https://ru.investing.com/indices/investing.com-btc-usd'
-        header = {'User-Agent': 'Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir')'}
+        header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'}
         full_page = requests.get(Bitcoin,headers = header)
         soup = BeautifulSoup(full_page.content,'html.parser')
         convert = soup.findAll("span",{"class": "arial_26 inlineblock pid-1057391-last","id":"last_last"})
