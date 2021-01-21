@@ -5,7 +5,12 @@ import requests
 from selenium import webdriver
 import os
 bot = telebot.TeleBot('1568111312:AAFDLr5-uhe-xdNJDKCk0CM64FOY55bROFA')
-
+intern.capabilities = {
+  'selenium-version': '2.44.0'
+, 'chromeOptions': {
+    debuggerAddress: '127.0.0.1:9222'
+  }
+}
 @bot.message_handler(commands=['start'])
 def start(message):
     #Кнопки для бота
@@ -23,7 +28,7 @@ def mess(message):
     get_message_bot = message.text.strip().lower()
     if get_message_bot == "bitcoin":
         Bitcoin = 'https://ru.investing.com/indices/investing.com-btc-usd'
-        header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'}
+        header = {'User-Agent': 'Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir')'}
         full_page = requests.get(Bitcoin,headers = header)
         soup = BeautifulSoup(full_page.content,'html.parser')
         convert = soup.findAll("span",{"class": "arial_26 inlineblock pid-1057391-last","id":"last_last"})
