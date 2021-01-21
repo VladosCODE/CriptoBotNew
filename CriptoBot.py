@@ -51,7 +51,7 @@ def mess(message):
         options.add_argument('headless')
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
-        DRIVER = 'D:\chromeDriver\chromedriver.exe''
+        DRIVER = 'D:\chromeDriver\chromedriver.exe'
         driver = webdriver.Chrome(DRIVER, chrome_options=options)
         driver.get('https://ru.tradingview.com/chart/?symbol=BITSTAMP%3AETHUSD')
         driver.save_screenshot("ethreum.png")
@@ -67,7 +67,7 @@ def mess(message):
         options.add_argument('headless')
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
-        DRIVER = 'D:\chromeDriver\chromedriver.exe''
+        DRIVER = 'D:\chromeDriver\chromedriver.exe'
         driver = webdriver.Chrome(DRIVER, chrome_options=options)
         driver.get('https://ru.tradingview.com/chart/?symbol=BITSTAMP%3AXRPUSD')
         driver.save_screenshot("xrp.png")
@@ -83,7 +83,7 @@ def mess(message):
         options.add_argument('headless')
         options.add_argument(f'window-size={1080},{720}')
         options.add_argument('hide-scrollbars')
-        DRIVER = 'D:\chromeDriver\chromedriver.exe''
+        DRIVER = 'D:\chromeDriver\chromedriver.exe'
         driver = webdriver.Chrome(DRIVER, chrome_options=options)
         driver.get('https://ru.tradingview.com/chart/?symbol=BITFINEX%3AADAUSD')
         element = driver.save_screenshot("cardano.png")
